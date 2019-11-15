@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: #202020;
+    color: #fff;
+}
+
+.container {
+
+}
+
+.input-container {
+    border: 2px solid salmon;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#output {
+    border: 2px solid lawngreen;
+    padding: 20px;
+    margin: 40px 0;
+}
+
+.logo {
+    height: auto;
+    max-width: 100%;
+    border: 1px solid red;;
+}
+
+.logo-wrapper{
+    width: 200px;
+}
