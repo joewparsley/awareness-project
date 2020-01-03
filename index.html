@@ -11,32 +11,38 @@
 	</head>
 	<body>
         <div class="container">
+            <!-- NavBar -->
+            <div id="nav">
+                <a id="ngLogo" href="#" rel="newwindow"></a>
+                <div class="nav-text">Awareness Poster Generator</div>
+            </div>
             <form class="input-container" id="form">
-                <!-- Phone -->
-                <label for="phone">Phone Number:</label>
-                <input type="text" name="phone" id="phone">
-                <!-- URL -->
-                <label for="url">URL:</label>
-                <input type="text" name="url" id="url">
-                <!-- File Upload -->
-                <input type="file" name="logo" accept="image/*" id="logo">
-
+                <h1>To Create an Awareness Poster, please fill out the following information:</h1>
+                <div id="input-group">
+                    <label for="phone">Phone Number: </label>
+                    <input type="text" name="phone" id="phone">
+                    <label for="url">Vanity URL:</label>
+                    <input type="text" name="url" id="url">
+                    <label for="logo">Logo Upload:</label>
+                    <input type="file" name="logo" accept="image/*" id="logo">
+                </div>
+                <p id="checkbox-text">Select Languages</p>
                 <div id="checkbox-group">
                     <!-- English -->
-                    <label for="english">English</label>
                     <input type="checkbox" name="english" value="en">
+                    <label for="english">English</label>
                     <!-- Spanish -->
-                    <label for="english">Spanish</label>
                     <input type="checkbox" name="spanish" value="es">
+                    <label for="english">Spanish</label>
                     <!-- German -->
-                    <label for="german">German</label>
                     <input type="checkbox" name="german" value="de">
+                    <label for="german">German</label>
                     <!-- French -->
-                    <label for="french">French</label>
                     <input type="checkbox" name="french" value="fr">
+                    <label for="french">French</label>
                 </div>
                 <!-- Button -->
-                <input type="button" name="button" id="button" value="button">
+                <input type="button" name="button" id="button" value="Create Poster(s)">
             </form>
             <!-- Output -->
             <div id="output"></div>

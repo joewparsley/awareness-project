@@ -50,11 +50,12 @@ function displayOutput() {
     prepareOutput(selectedLanguages);
     createPages(output);
     // Hide The Form
+    $("#nav").hide();
     $("#form").hide();
     // Force Print
     setTimeout(function() {
         window.print();
-    },1000);
+    },5000);
 };
 
 function uploadImage (input) {
@@ -98,30 +99,39 @@ function prepareOutput(langs) {
 function createPages(page) {
     for (i = 0; i < page.length; i++) {
         // Create Elements
+        var pageWrapper = document.createElement("div");
         var titleElement = document.createElement("h1");
-        var bodyElement = document.createElement("p");
-        var contactElement = document.createElement("p");
+        var bodyElement = document.createElement("h2");
+        var contactElement = document.createElement("h3");
         var logoElement = document.createElement("img");
         var logoElementWrapper = document.createElement("div");
         var urlElement = document.createElement("p");
         var phoneElement = document.createElement("p");
+        var contactWrapper = document.createElement("div");
         // Add Classes
         logoElement.classList.add("logo");
         logoElementWrapper.append(logoElement);
         logoElementWrapper.classList.add("logo-wrapper");
+        pageWrapper.classList.add("page-wrapper");
+        contactWrapper.classList.add("contact-wrapper");
         // Place text in elements
         titleElement.innerText = page[i].title;
         bodyElement.innerText = page[i].body;
         contactElement.innerText = page[i].contact;
         urlElement.innerText = page[i].url;
         phoneElement.innerText = page[i].phone;
+        // Wrap Elements in a container
+        pageWrapper.append(titleElement);
+        pageWrapper.append(bodyElement);
+        // Wrap contact info
+        contactWrapper.appendChild(contactElement);
+        contactWrapper.appendChild(urlElement);
+        contactWrapper.appendChild(phoneElement);
+        // Wrap contact info and logo
+        pageWrapper.append(contactWrapper);
+        pageWrapper.append(logoElementWrapper);
         // Append elements to DOM
-        document.getElementById("output").append(titleElement);
-        document.getElementById("output").append(bodyElement);
-        document.getElementById("output").append(contactElement);
-        document.getElementById("output").append(logoElementWrapper);
-        document.getElementById("output").append(urlElement);
-        document.getElementById("output").append(phoneElement);
+        document.getElementById("output").append(pageWrapper);
     }
     //  Upload Images
     uploadImage(fileInput);

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -5,16 +7,64 @@
 html, body {
     padding: 0;
     margin: 0;
-    background-color: #202020;
-    color: #fff;
+    background-color: #eeeeee;
+    color: #424143;
+    font: normal normal 400 14px/20px 'Roboto', sans-serif;
 }
 
-.container {
+#button {
+    padding: 10px;
+    background-color: #f37f21;
+    border: 4px #f37f21 solid;
+    border-radius: 10px;
+    margin: 40px 0;
+    color: #fff;
+    cursor: pointer;
+    transition: all ease-in-out .1s;
+    font-weight: 700;
+}
 
+#button:hover {
+    background-color: #fff;
+    border-color: #b2bb35;
+    color: #b2bb35;
+}
+
+
+#nav {
+    -webkit-box-shadow: 0px 5px 5px -5px rgba(66,65,67,1);
+    -moz-box-shadow: 0px 5px 5px -5px rgba(66,65,67,1);
+    box-shadow: 0px 5px 5px -5px rgba(66,65,67,1);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ngLogo {
+    background: url(prime-no-tag-rgb.png) no-repeat center;
+    background-size: contain;
+    height: 100px;
+    width: 300px;
+    display: block;
+}
+
+.nav-text {
+    font: normal normal 700 30px/30px 'Roboto', sans-serif;
+}
+
+
+#form {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#form > h1 {
+    margin: 40px 0px;
+    font: normal normal 700 24px/24px 'Roboto', sans-serif;
 }
 
 .input-container {
-    border: 2px solid salmon;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -23,18 +73,74 @@ html, body {
     margin: 0 auto;
 }
 
+
+#input-group label {
+    margin: 10px;
+}
+
+#checkbox-text {
+    margin-top: 40px;
+    font: normal normal 700 18px/18px 'Roboto', sans-serif;
+}
+
+
 #output {
-    border: 2px solid lawngreen;
-    padding: 20px;
-    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .logo {
     height: auto;
     max-width: 100%;
-    border: 1px solid red;;
+    width: 150px;
+    position: absolute;
+    top: 20px;
+    right: 60px;
 }
 
 .logo-wrapper{
     width: 200px;
+}
+
+.page-wrapper {
+    background: url(bg.jpg) no-repeat center;
+    background-size: cover;
+    width: 811px;
+    height: 1056px;
+    border-bottom: 10px solid #f37f21;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    color: #fff
+}
+
+.page-wrapper h1 {
+    font: normal normal 700 80px/90px 'Roboto', sans-serif;
+    padding: 100px 60px 20px 60px;
+    margin: 0;
+}
+
+.page-wrapper h2 {
+    font: normal normal 400 40px/50px 'Roboto', sans-serif;
+    padding: 20px 60px;
+    margin: 0;
+}
+
+.contact-wrapper {
+    background-color: #f37f21;
+    border-radius: 0px 40px 40px 0px;
+    padding: 20px 100px 20px 60px;
+    margin-top: 80px;
+}
+
+.contact-wrapper h3 {
+    font: normal normal 700 24px/24px 'Roboto', sans-serif;
+}
+
+.contact-wrapper p {
+    font: normal normal 700 16px/18px 'Roboto', sans-serif;
 }
