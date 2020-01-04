@@ -53,9 +53,9 @@ function displayOutput() {
     $("#nav").hide();
     $("#form").hide();
     // Force Print
-    setTimeout(function() {
-        window.print();
-    },5000);
+    // setTimeout(function() {
+    //     window.print();
+    // },5000);
 };
 
 function uploadImage (input) {
