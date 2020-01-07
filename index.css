@@ -105,8 +105,9 @@ html, body {
 }
 
 .page-wrapper {
-    background: url(bg.jpg) no-repeat center;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 816px;
     height: 1056px;
     border-bottom: 10px solid #f37f21;

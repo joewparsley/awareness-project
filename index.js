@@ -1,7 +1,8 @@
 // Global Variables******************************************
 var phoneInput = null;
 var urlInput = null;
-var fileInput = null;
+var logoInput = null;
+var bgInput = null;
 var languageInput = null;
 var selectedLanguages = [];
 var output = [];
@@ -35,7 +36,8 @@ function init() {
     // Set Global Variables
     phoneInput = document.getElementById("phone");
     urlInput = document.getElementById("url");
-    fileInput = document.getElementById("logo");
+    logoInput = document.getElementById("logo");
+    bgInput = document.getElementById("bg");
     languageInput = document.getElementById("checkbox-group").children;
 
     // Set Button
@@ -58,11 +60,24 @@ function displayOutput() {
     // },5000);
 };
 
-function uploadImage (input) {
+function uploadLogo (input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
             $('.logo').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+};
+
+function uploadBackground (input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var posterPages = document.getElementsByClassName("page-wrapper");
+            for (i = 0; i < posterPages.length; i++) {
+                posterPages[i]. style.backgroundImage = "url('" + e.target.result + "')";
+            }
         };
         reader.readAsDataURL(input.files[0]);
     }
@@ -84,12 +99,14 @@ function prepareOutput(langs) {
             contact:"",
             logo:"",
             url:"",
-            phone:""
+            phone:"",
+            background:""
         };
         dataOutput.title = staticText[langs[i]].title;
         dataOutput.body = staticText[langs[i]].body;
         dataOutput.contact = staticText[langs[i]].contact;
-        dataOutput.logo = fileInput;
+        dataOutput.logo = logoInput;
+        dataOutput.background = bgInput;
         dataOutput.url = urlInput.value;
         dataOutput.phone = phoneInput.value;
         output.push(dataOutput);
@@ -134,7 +151,9 @@ function createPages(page) {
         document.getElementById("output").append(pageWrapper);
     }
     //  Upload Images
-    uploadImage(fileInput);
+    uploadLogo(logoInput);
+    uploadBackground(bgInput);
+    
 }
 
 
