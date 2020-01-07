@@ -12,7 +12,7 @@ html, body {
     font: normal normal 400 14px/20px 'Roboto', sans-serif;
 }
 
-#button {
+.button {
     padding: 10px;
     background-color: #f37f21;
     border: 4px #f37f21 solid;
@@ -24,10 +24,22 @@ html, body {
     font-weight: 700;
 }
 
-#button:hover {
+.button:hover {
     background-color: #fff;
     border-color: #b2bb35;
     color: #b2bb35;
+}
+
+#homeButton {
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+#printButton {
+    position: absolute;
+    top: 0;
+    right: 10px;
 }
 
 
@@ -71,6 +83,10 @@ html, body {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+}
+
+#input-group {
+    /* display: flex; */
 }
 
 

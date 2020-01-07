@@ -40,10 +40,27 @@ function init() {
     bgInput = document.getElementById("bg");
     languageInput = document.getElementById("checkbox-group").children;
 
+    // Hide buttons
+    $("#homeButton").hide();
+    $("#printButton").hide();
+
     // Set Button
     document.getElementById("button").addEventListener("click", function(event) {
         displayOutput();
-    })
+    });
+
+
+    document.getElementById("homeButton").addEventListener("click", function(event) {
+        location.reload();
+    });
+
+    document.getElementById("printButton").addEventListener("click", function(event) {
+        $("#homeButton").hide();
+        $("#printButton").hide();
+        window.print();
+    });
+
+
 };
 
 function displayOutput() {
@@ -54,6 +71,9 @@ function displayOutput() {
     // Hide The Form
     $("#nav").hide();
     $("#form").hide();
+    // Show Buttons
+    $("#homeButton").show();
+    $("#printButton").show();
     // Force Print
     // setTimeout(function() {
     //     window.print();
