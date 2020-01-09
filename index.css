@@ -86,12 +86,16 @@ html, body {
 }
 
 #input-group {
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid red;
 }
 
 
 #input-group label {
-    margin: 10px;
+    margin: 10px 0;
 }
 
 #checkbox-text {

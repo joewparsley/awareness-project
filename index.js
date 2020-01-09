@@ -40,27 +40,28 @@ function init() {
     bgInput = document.getElementById("bg");
     languageInput = document.getElementById("checkbox-group").children;
 
-    // Hide buttons
+    // Hide print and home buttons that display once posters are generated.
     $("#homeButton").hide();
     $("#printButton").hide();
 
-    // Set Button
+    // Set up button to create posters
     document.getElementById("button").addEventListener("click", function(event) {
         displayOutput();
     });
-
-
+    // Set up Home button
     document.getElementById("homeButton").addEventListener("click", function(event) {
         location.reload();
     });
-
+    // Setup print button
     document.getElementById("printButton").addEventListener("click", function(event) {
         $("#homeButton").hide();
         $("#printButton").hide();
         window.print();
+        setTimeout(function() {
+            $("#homeButton").show();
+            $("#printButton").show();
+        },100);
     });
-
-
 };
 
 function displayOutput() {
@@ -74,10 +75,6 @@ function displayOutput() {
     // Show Buttons
     $("#homeButton").show();
     $("#printButton").show();
-    // Force Print
-    // setTimeout(function() {
-    //     window.print();
-    // },5000);
 };
 
 function uploadLogo (input) {
