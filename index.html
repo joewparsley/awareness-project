@@ -19,29 +19,34 @@
             <form class="input-container" id="form">
                 <h1>To make a poster, please fill out the following information:</h1>
                 <div id="input-group">
-                    <label for="phone">Phone Number: </label>
+                    <!-- Phone Number -->
+                    <label for="phone">Phone Number:</label>
                     <input type="text" name="phone" id="phone">
+                    <!-- URL -->
                     <label for="url">Vanity URL:</label>
                     <input type="text" name="url" id="url">
+                    <!-- Logo -->
                     <label for="logo">Client Logo:</label>
                     <input type="file" name="logo" accept="image/*" id="logo">
+                    <!-- Poster Image -->
                     <label for="bg">Poster Background Image:</label>
                     <input type="file" name="bg" accept="image/*" id="bg">
                 </div>
-                <p id="checkbox-text">Select Languages</p>
-                <div id="checkbox-group">
-                    <!-- English -->
-                    <input type="checkbox" name="english" value="en">
-                    <label for="english">English</label>
-                    <!-- Spanish -->
-                    <input type="checkbox" name="spanish" value="es">
-                    <label for="english">Spanish</label>
-                    <!-- German -->
-                    <input type="checkbox" name="german" value="de">
-                    <label for="german">German</label>
-                    <!-- French -->
-                    <input type="checkbox" name="french" value="fr">
-                    <label for="french">French</label>
+
+                <div class="box-wrapper">
+                    <!-- Font Color -->
+                    <p class="checkbox-text">Select Font Color:</p>
+                    <div id="color-checkbox-group">
+                        <!-- White -->
+                        <input id="white-text" type="radio" name="font" value="fff">
+                        <label for="font">White Text</label>
+                        <!-- Black -->
+                        <input id="black-text" type="radio" name="font" value="000">
+                        <label for="font">Black Text</label>
+                    </div>
+                    <!-- Language Selection -->
+                    <p class="checkbox-text">Select Languages:</p>
+                    <div id="lang-checkbox-group"></div>
                 </div>
                 <!-- Button -->
                 <input type="button" name="button" id="button" class="button" value="Create Poster(s)">

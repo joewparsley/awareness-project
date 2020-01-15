@@ -7,7 +7,7 @@
 html, body {
     padding: 0;
     margin: 0;
-    background-color: #eeeeee;
+    background-color: #f1f1f1;
     color: #424143;
     font: normal normal 400 14px/20px 'Roboto', sans-serif;
 }
@@ -44,13 +44,11 @@ html, body {
 
 
 #nav {
-    -webkit-box-shadow: 0px 5px 5px -5px rgba(66,65,67,1);
-    -moz-box-shadow: 0px 5px 5px -5px rgba(66,65,67,1);
-    box-shadow: 0px 5px 5px -5px rgba(66,65,67,1);
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #f37f21;
 }
 
 #ngLogo {
@@ -67,8 +65,11 @@ html, body {
 
 
 #form {
-    width: 1000px;
-    margin: 0 auto;
+    width: 800px;
+    margin: 20px  auto;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #f37f21;
 }
 
 #form > h1 {
@@ -90,19 +91,30 @@ html, body {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    border: 1px solid red;
+    width: 600px;
 }
 
 
 #input-group label {
     margin: 10px 0;
+    width: 100%;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
-#checkbox-text {
-    margin-top: 40px;
-    font: normal normal 700 18px/18px 'Roboto', sans-serif;
+#input-group input {
+    margin-bottom: 20px;
+    width: 100%;
 }
 
+.checkbox-text {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.box-wrapper {
+    width: 600px;
+}
 
 #output {
     display: flex;
@@ -136,7 +148,6 @@ html, body {
     justify-content: flex-start;
     align-items: flex-start;
     position: relative;
-    color: #fff
 }
 
 .page-wrapper h1 {
@@ -164,4 +175,15 @@ html, body {
 
 .contact-wrapper p {
     font: normal normal 700 16px/18px 'Roboto', sans-serif;
+}
+
+#lang-checkbox-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.cbwrapper {
+    width: 200px;
+    margin: 5px 0;
 }

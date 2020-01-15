@@ -8,37 +8,75 @@ var selectedLanguages = [];
 var output = [];
 
 var staticText = {
-    en:{
-        title:"Report your concerns in confidence",
-        body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we’re available 24/7.",
-        contact:"How to contact us"
-    },
-    es:{
-        title:"Informe sus inquietudes en confianza",
-        body:"Si ve o sospecha de una mala acción, hable. Es gratis, seguro y estamos disponibles 24/7.",
-        contact:"Cómo contactarnos"
-    },
-    de:{
-        title:"Melden Sie Ihre Bedenken vertraulich",
-        body:"Wenn Sie ein Fehlverhalten bemerken oder vermuten, melden Sie sich. Es ist kostenlos, sicher und wir sind rund um die Uhr für Sie da.",
-        contact:"Wie Sie uns erreichen"
-    },
-    fr:{
-        title:"Signalez vos préoccupations en toute confiance",
-        body:"Si vous voyez ou soupçonnez un acte répréhensible, parlez. C’est gratuit, sécurisé et disponible 24h / 24 et 7j / 7.",
-        contact:"Comment nous contacter"
-    }
+    en:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"English"},
+    af:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Afrikaans"},
+    sq:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Albanian"},
+    ar:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Arabic"},
+    be:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Belarusian"},
+    bs:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Bosnian"},
+    bg:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Bulgarian"},
+    my:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Burmese"},
+    zhs:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Chinese (Simplified)"},
+    zh:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Chinese (Traditional)"},
+    hr:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Croatian"},
+    cs:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Czech"},
+    da:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Danish"},
+    nl:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Dutch"},
+    et:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Estonian"},
+    fil:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Filipino"},
+    fi:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Finnish"},
+    nlbe:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Flemish"},
+    frca:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"French (Canada)"},
+    fr:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"French (France)"},
+    ka:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Georgian"},
+    de:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"German"},
+    gr:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Greek"},
+    he:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Hebrew"},
+    hi:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Hindi"},
+    hu:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Hungarian"},
+    id:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Indonesian"},
+    it:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Italian"},
+    ja:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Japanese"},
+    ko:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Korean"},
+    lo:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Lao"},
+    lv:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Latvian"},
+    lt:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Lithuanian"},
+    ms:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Malay"},
+    kxd:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Malay (Brunei)"},
+    no:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Norwegian"},
+    fa:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Persian (Farsi)"},
+    pl:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Polish"},
+    pt:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Portuguese"},
+    ro:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Romanian"},
+    ru:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Russian"},
+    sr:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Serbian (Cyrillic)"},
+    srcs:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Serbian (Latin)"},
+    sk:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Slovak"},
+    sl:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Slovenian"},
+    so:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Somali"},
+    es:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Spanish"},
+    ke:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Swahili"},
+    th:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Thai"},
+    tr:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Turkish"},
+    uk:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Ukrainian"},
+    ur:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Urdu"},
+    vi:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Vietnamese"},
+    cy:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Welsh"},
+    zu:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Zulu"}    
 };
 
 
 // Functions *********************************************
 function init() {
+    createLanguageCheckboxes();
+
+
     // Set Global Variables
     phoneInput = document.getElementById("phone");
     urlInput = document.getElementById("url");
     logoInput = document.getElementById("logo");
     bgInput = document.getElementById("bg");
-    languageInput = document.getElementById("checkbox-group").children;
+    languageInput = document.getElementById("lang-checkbox-group").children;
 
     // Hide print and home buttons that display once posters are generated.
     $("#homeButton").hide();
@@ -102,9 +140,33 @@ function uploadBackground (input) {
 
 function getLanguageText(input) {
     for (i = 0; i < input.length; i++) {
-        if (input[i].checked) {
-            selectedLanguages.push(input[i].value)
+        console.log(input[i]);
+        if (input[i].firstChild.checked) {
+            selectedLanguages.push(input[i].firstChild.value)
         }
+    }
+};
+
+function createLanguageCheckboxes() {
+    var objectKeys = Object.keys(staticText);
+    for (i = 0; i < objectKeys.length; i++) {
+        // Create elements
+        var cbLabel = document.createElement("label");
+        var cbInput = document.createElement("input");
+        var cbWrapper = document.createElement("div");
+        // Set up Label
+        cbLabel.setAttribute("for", staticText[objectKeys[i]].lang);
+        cbLabel.innerHTML = staticText[objectKeys[i]].lang;
+        // Set up Input
+        cbInput.setAttribute("type", "checkbox");
+        cbInput.setAttribute("name", staticText[objectKeys[i]].lang);
+        cbInput.setAttribute("value", objectKeys[i]);
+        // Add class
+        cbWrapper.classList.add("cbwrapper");
+        // Append to the output div
+        cbWrapper.append(cbInput);
+        cbWrapper.append(cbLabel);
+        document.getElementById("lang-checkbox-group").append(cbWrapper);
     }
 };
 
@@ -148,6 +210,8 @@ function createPages(page) {
         logoElementWrapper.classList.add("logo-wrapper");
         pageWrapper.classList.add("page-wrapper");
         contactWrapper.classList.add("contact-wrapper");
+        // Font Color Check
+        document.getElementById("black-text").checked ? pageWrapper.style.color = "#000" : pageWrapper.style.color = "#fff";
         // Place text in elements
         titleElement.innerText = page[i].title;
         bodyElement.innerText = page[i].body;
@@ -170,11 +234,7 @@ function createPages(page) {
     //  Upload Images
     uploadLogo(logoInput);
     uploadBackground(bgInput);
-    
-}
-
-
-
+};
 
 // DOM Ready *********************************************
 document.addEventListener("load", init());
