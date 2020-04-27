@@ -78,8 +78,8 @@ function init() {
     createLanguageCheckboxes();
 
     // Set Global Variables
-    phoneInput = document.getElementById("phone").value;
-    urlInput = document.getElementById("url").value;
+    phoneInput = document.getElementById("phone");
+    urlInput = document.getElementById("url");
     logoInput = document.getElementById("logo");
     languageInput = document.getElementById("lang-checkbox-group").children;
 
