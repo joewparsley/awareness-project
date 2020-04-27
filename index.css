@@ -31,13 +31,13 @@ html, body {
 }
 
 #homeButton {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 10px;
 }
 
 #printButton {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 10px;
 }
@@ -52,7 +52,7 @@ html, body {
 }
 
 #ngLogo {
-    background: url(prime-no-tag-rgb.png) no-repeat center;
+    background: url(nglogo.png) no-repeat center;
     background-size: contain;
     height: 100px;
     width: 300px;
@@ -124,16 +124,44 @@ html, body {
 }
 
 .logo {
-    height: auto;
+    background-size: contain;
+    height: 75px;
     max-width: 100%;
     width: 150px;
-    position: absolute;
-    top: 20px;
-    right: 60px;
 }
 
-.logo-wrapper{
-    width: 200px;
+.ngLogo {
+    background: url(nglogo.png) no-repeat center;
+    background-size: contain;
+    height: 75px;
+    max-width: 100%;
+    width: 150px;
+}
+
+.footer-wrapper{
+    border-top: 10px solid #f37f21;
+    width: 100%;
+    height: 136px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-copy {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 8px;
+    color: #000;
+    margin: 0;
+    width: 100%;
+    text-align: center;
 }
 
 .page-wrapper {
@@ -142,39 +170,79 @@ html, body {
     background-repeat: no-repeat;
     width: 816px;
     height: 1056px;
-    border-bottom: 10px solid #f37f21;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     position: relative;
+    color: #fff;
+    padding-top: 100px;
+    padding-bottom: 136px;
 }
 
 .page-wrapper h1 {
     font: normal normal 700 80px/90px 'Roboto', sans-serif;
-    padding: 100px 60px 20px 60px;
+    padding: 0px 60px;
     margin: 0;
+    height: 290px;
 }
 
 .page-wrapper h2 {
     font: normal normal 400 40px/50px 'Roboto', sans-serif;
-    padding: 20px 60px;
+    padding: 0px 60px;
+    height: 190px;
+    margin: 20px 0px !important;
     margin: 0;
 }
 
 .contact-wrapper {
     background-color: #f37f21;
-    border-radius: 0px 40px 40px 0px;
+    border-radius: 0px 60px 60px 0px;
     padding: 20px 100px 20px 60px;
-    margin-top: 80px;
+    margin: 80px 0;
 }
 
 .contact-wrapper h3 {
-    font: normal normal 700 24px/24px 'Roboto', sans-serif;
+    font: normal normal 700 34px/34px 'Roboto', sans-serif;
+    margin-top: 0;
 }
 
-.contact-wrapper p {
-    font: normal normal 700 16px/18px 'Roboto', sans-serif;
+.url {
+    position: relative;
+    font: normal normal 700 20px/20px 'Roboto', sans-serif;
+    padding: 5px 0;
+    margin-left: 40px;
+    margin-top: 0;
+}
+
+.url::before {
+    background: url(web.png) no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: -40px;
+    height: 30px;
+    width: 30px;
+    content: " ";
+}
+
+.phone {
+    position: relative;
+    font: normal normal 700 20px/20px 'Roboto', sans-serif;
+    padding: 5px 0;
+    margin-left: 40px;
+    margin-top: 0;
+}
+
+.phone::before {
+    background: url(phone.png) no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: -40px;
+    height: 30px;
+    width: 30px;
+    content: " ";
 }
 
 #lang-checkbox-group {
