@@ -77,46 +77,73 @@ var staticText = {
 function init() {
     createLanguageCheckboxes();
 
-    // Set Global Variables
-    phoneInput = document.getElementById("phone");
-    urlInput = document.getElementById("url");
-    logoInput = document.getElementById("logo");
-    languageInput = document.getElementById("lang-checkbox-group").children;
-
-    // Hide print and home buttons that display once posters are generated.
+    // Hide Elements
     $("#homeButton").hide();
     $("#printButton").hide();
-
+    $("#updateButton").hide();
+    $("#updateHeader").hide();
     // Set up button to create posters
     document.getElementById("button").addEventListener("click", function(event) {
-        // Clear old content
-        document.getElementById("output").innerHTML = "";
         displayOutput();
     });
     // Set up Home button
     document.getElementById("homeButton").addEventListener("click", function(event) {
         location.reload();
     });
+    // Set up Update button
+    document.getElementById("updateButton").addEventListener("click", function(event) {
+        updateOutput();
+    });
     // Setup print button
     document.getElementById("printButton").addEventListener("click", function(event) {
         $("#homeButton").hide();
         $("#printButton").hide();
+        $("#form").hide();
         window.print();
         setTimeout(function() {
             $("#homeButton").show();
             $("#printButton").show();
+            $("#form").show();
         },100);
     });
 };
 
 function displayOutput() {
+    // Set Global Variables
+    phoneInput = document.getElementById("phone");
+    urlInput = document.getElementById("url");
+    logoInput = document.getElementById("logo");
+    languageInput = document.getElementById("lang-checkbox-group").children;
     // Process Data
     getLanguageText(languageInput);
     prepareOutput(selectedLanguages);
     createPages(output);
-    // Hide The Form
+    // Hide Elements
     $("#nav").hide();
-    $("#form").hide();
+    $("#box-wrapper").hide();
+    $("#button").hide();
+    $("#logoInputWrapper").hide();
+    $("#posterHeader").hide();
+    // Show Elements
+    $("#homeButton").show();
+    $("#printButton").show();
+    $("#updateButton").show();
+    $("#updateHeader").show();
+    // Update form layout once a poster(s) is generated
+    updateFormLayout();
+};
+
+function updateOutput() {
+    // Clear old content
+    document.getElementById("output").innerHTML = "";
+    // Set Global Variables
+    phoneInput = document.getElementById("phone");
+    urlInput = document.getElementById("url");
+    logoInput = document.getElementById("logo");
+    languageInput = document.getElementById("lang-checkbox-group").children;
+    // Process Data
+    getLanguageText(languageInput);
+    createPages(output);
     // Show Buttons
     $("#homeButton").show();
     $("#printButton").show();
@@ -126,13 +153,17 @@ function uploadLogo (input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
-
             $('.logo').css('background', "url(" + e.target.result + ") no-repeat center center");
             $('.logo').css('background-size', "contain");
         };
         reader.readAsDataURL(input.files[0]);
     }
 };
+
+function updateFormLayout() {
+    var form = document.getElementById("form");
+    form.classList.add("small-form");
+}
 
 function setBackground () {
     var posterPages = document.getElementsByClassName("page-wrapper");
@@ -173,6 +204,8 @@ function createLanguageCheckboxes() {
 };
 
 function prepareOutput(langs) {
+    var phoneNumber = null;
+    var url = null;
     for (i = 0; i < langs.length; i++) {
         var dataOutput = {
             title:"",
@@ -187,9 +220,14 @@ function prepareOutput(langs) {
         dataOutput.contact = staticText[langs[i]].contact;
         dataOutput.logo = logoInput;
         dataOutput.url = urlInput.value;
+        url = urlInput.value;
         dataOutput.phone = phoneInput.value;
+        phoneNumber = phoneInput.value;
         output.push(dataOutput);
     };
+    // Set DOM elements to inputed value after a form is generated
+    document.getElementById("phone").value = phoneNumber;
+    document.getElementById("url").value = url;
 };
 
 function createPages(page) {

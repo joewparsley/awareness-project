@@ -91,7 +91,6 @@ html, body {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    width: 600px;
 }
 
 
@@ -112,7 +111,7 @@ html, body {
     text-decoration: underline;
 }
 
-.box-wrapper {
+#box-wrapper {
     width: 600px;
 }
 
@@ -254,4 +253,11 @@ html, body {
 .cbwrapper {
     width: 200px;
     margin: 5px 0;
+}
+
+.small-form {
+    width: 250px !important;
+    position: fixed;
+    top: 100px;
+    left: 10px;
 }
