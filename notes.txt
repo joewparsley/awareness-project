@@ -3,3 +3,19 @@
 - Figure out what langauges are RTL
 - Apply conditional logic for RTL languages
 - Add logic to change the language, phone number and url after a poster is generated
+
+
+
+
+===CSS Fixes===
+- BE
+- ES
+- HI
+- ID
+- IT
+- KA
+- LT
+- ML
+- NE
+- PT
+- TA

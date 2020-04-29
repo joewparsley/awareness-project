@@ -19,24 +19,28 @@
             <form class="input-container" id="form">
                 <h1 id="posterHeader">To make a poster, please fill out the following information:</h1>
                 <h1 id="updateHeader">Update Phone Number & URL</h1>
-                <div id="input-group">
-                    <!-- Phone Number -->
-                    <label for="phone">Phone Number:</label>
-                    <input type="text" name="phone" id="phone" placeholder="XXX-XXX-XXXX">
-                    <!-- URL -->
-                    <label for="url">Vanity URL:</label>
-                    <input type="text" name="url" id="url" placeholder="myurl.ethicspoint.com">
-                    <!-- Logo -->
-                    <div id="logoInputWrapper">
-                        <label for="logo">Client Logo:</label>
-                        <input type="file" name="logo" accept="image/*" id="logo">
+
+                <div class="flex-wrapper">
+                    <div id="input-group">
+                        <!-- Phone Number -->
+                        <label for="phone">Phone Number:</label>
+                        <input type="text" name="phone" id="phone" placeholder="XXX-XXX-XXXX">
+                        <!-- URL -->
+                        <label for="url">Vanity URL:</label>
+                        <input type="text" name="url" id="url" placeholder="myurl.ethicspoint.com">
+                        <!-- Logo -->
+                        <div id="logoInputWrapper">
+                            <label for="logo">Client Logo:</label>
+                            <input type="file" name="logo" accept="image/*" id="logo">
+                        </div>
+                    </div>
+                    <div id="box-wrapper">
+                        <!-- Language Selection -->
+                        <p class="checkbox-text">Select Languages:</p>
+                        <div id="lang-checkbox-group"></div>
                     </div>
                 </div>
-                <div id="box-wrapper">
-                    <!-- Language Selection -->
-                    <p class="checkbox-text">Select Languages:</p>
-                    <div id="lang-checkbox-group"></div>
-                </div>
+
                 <!-- Button -->
                 <input type="button" name="button" id="button" class="button" value="Create Poster(s)">
                 <input type="button" name="updateButton" id="updateButton" class="button" value="Update Phone Number/URL">

@@ -65,7 +65,7 @@ html, body {
 
 
 #form {
-    width: 800px;
+    width: 1200px;
     margin: 20px  auto;
     background-color: #fff;
     border-radius: 10px;
@@ -89,7 +89,7 @@ html, body {
 #input-group {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
 }
 
@@ -112,7 +112,7 @@ html, body {
 }
 
 #box-wrapper {
-    width: 600px;
+    width: 620px;
 }
 
 #output {
@@ -246,12 +246,12 @@ html, body {
 
 #lang-checkbox-group {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
 .cbwrapper {
-    width: 200px;
+    width: 100px;
     margin: 5px 0;
 }
 
@@ -260,4 +260,15 @@ html, body {
     position: fixed;
     top: 100px;
     left: 10px;
+}
+
+.small-form .flex-wrapper {
+    width: auto !important;
+}
+
+.flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 1000px;
 }
