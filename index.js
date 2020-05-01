@@ -94,6 +94,7 @@ function init() {
     document.getElementById("updateButton").addEventListener("click", function(event) {
         updateOutput();
     });
+
     // Setup print button
     document.getElementById("printButton").addEventListener("click", function(event) {
         $("#homeButton").hide();
