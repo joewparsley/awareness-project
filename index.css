@@ -274,3 +274,129 @@ html, body {
     align-items: flex-start;
     width: 1000px;
 }
+
+
+/* Language Specific CSS */
+.BE .contact-wrapper h3 {
+    font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.BE h1 {
+    font: normal normal 700 60px/80px 'Roboto', sans-serif;
+}
+
+.BG h1 {
+    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+}
+
+.DA h1 {
+    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+}
+
+.DE .contact-wrapper h3 {
+    font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.EL .contact-wrapper h3 {
+    font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.EL h1 {
+    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+}
+
+.ES h1 {
+    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+}
+
+.ES .contact-wrapper h3 {
+    font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.ET .contact-wrapper h3 {
+    font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.FI .contact-wrapper h3 {
+    font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.FR h1 {
+    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+}
+
+.HR h1 {
+    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+}
+
+.HU .contact-wrapper h3 {
+    font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.HY h1 {
+    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+}
+
+.HY h2 {
+    font: normal normal 400 50px/70px 'Roboto', sans-serif;
+}
+
+.ID h2 {
+    font: normal normal 400 50px/70px 'Roboto', sans-serif;
+}
+
+.ID h1 {
+    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+}
+
+.ID .contact-wrapper h3 {
+    font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.KA h2 {
+    font: normal normal 400 40px/60px 'Roboto', sans-serif;
+}
+
+.KA .contact-wrapper h3 {
+    font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.ML h1 {
+    font: normal normal 700 60px/80px 'Roboto', sans-serif;
+}
+
+.ML h2 {
+    font: normal normal 400 40px/60px 'Roboto', sans-serif;
+}
+
+.ML .contact-wrapper h3 {
+    font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.PT h1 {
+    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+}
+
+.PT h2 {
+    font: normal normal 400 50px/70px 'Roboto', sans-serif;
+}
+
+.PT .contact-wrapper h3 {
+    font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.TA h1 {
+    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+}
+
+.TA h2 {
+    font: normal normal 400 40px/60px 'Roboto', sans-serif;
+}
+
+.TA .contact-wrapper h3 {
+    font: normal normal 400 30px/50px 'Roboto', sans-serif;
+}
+
+.TA h2 {
+    font: normal normal 400 50px/70px 'Roboto', sans-serif;
+}

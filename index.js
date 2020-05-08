@@ -214,7 +214,8 @@ function prepareOutput(langs) {
             contact:"",
             logo:"",
             url:"",
-            phone:""
+            phone:"",
+            lang:""
         };
         dataOutput.title = staticText[langs[i]].title;
         dataOutput.body = staticText[langs[i]].body;
@@ -224,6 +225,7 @@ function prepareOutput(langs) {
         url = urlInput.value;
         dataOutput.phone = phoneInput.value;
         phoneNumber = phoneInput.value;
+        dataOutput.lang = staticText[langs[i]].lang;
         output.push(dataOutput);
     };
     // Set DOM elements to inputed value after a form is generated
@@ -253,6 +255,7 @@ function createPages(page) {
         urlElement.classList.add("url");
         phoneElement.classList.add("phone");
         pageWrapper.classList.add("page-wrapper");
+        pageWrapper.classList.add(page[i].lang);
         contactWrapper.classList.add("contact-wrapper");
         // Prepare footer
         footerCopyText.innerText = "©2020 NAVEX Global®.  All Rights Reserved  NVX29171  01/19";
