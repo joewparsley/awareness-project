@@ -6,13 +6,6 @@
 
 
 
-===CSS Fixes===
-- HY
-- ID
-- KA
-- ML
-- PT
-- TA
 
 
 ===Tool Meeting Notes===
@@ -30,8 +23,12 @@
 2. Is the edit functionaility sufficient for the team's usecase? How could it be better?
 3. I believe I'm still on track for June 1st, but the RTL code could be tricky and might extend the due date slightly
 4. Form Validation?
-5. For RTL languages, where should the orange box be?
 
+
+===Tool Meeting Feedback===
+- Go ahead with dropdown.
+- Orange box will go to the right to RTL
+- Update language options to be full language nbame
 
 
 
