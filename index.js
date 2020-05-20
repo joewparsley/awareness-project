@@ -6,6 +6,10 @@ var languageInput = null;
 var selectedLanguages = [];
 var output = [];
 
+var modal = null;
+var modalBtn = null;
+var closeBtn = null;
+
 var staticText = {
     en:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"English"},
     ar:{title:"ابلغ عن مخاوفك بثقةٍ تامة",body:"إذا علمت بأمر خطأ أو اشتبهت به، تحدث إلينا. فهذا مجاني وآمن كما أننا متاحون طوال اليوم في جميع أيام الأسبوع.",contact:"كيف تتصل بنا",lang:"Arabic"},
@@ -59,27 +63,14 @@ var staticText = {
     cy:{title:"Adroddwch am eich pryderon yn gyfrinachol",body:"Os ydych yn gweld neu’n amau bod camwedd yn digwydd, siaradwch. Mae am ddim, yn ddiogel, ac rydym ar gael 24/7.",contact:"Sut mae cysylltu â ni.",lang:"Welsh"},
     zhs:{title:"保密地报告您的疑虑",body:"如果您看到或怀疑不法行为，请说出来。我们的服务免费和安全，并全天无休。",contact:"如何联系我们。",lang:"Chinese (Simplified)"},
     zh:{title:"自信地報告您的疑慮",body:"如果您看到或懷疑有不法行為，請說出來。 我們的服務是免費且安全的，並提供24/7全天候服務。",contact:"如何联系我們。",lang:"Chinese"}
-    // ***TESTING DATA****
-    // af:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Afrikaans"},
-    // sq:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Albanian"},
-    // ar:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Arabic"},
-    // be:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Belarusian"},
-    // bs:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Bosnian"},
-    // bg:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Bulgarian"},
-    // my:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Burmese"},
-    // zhs:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Chinese (Simplified)"},
-    // zh:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"Chinese (Traditional)"} 
-    // ***TESTING DATA****
 };
 
-var langName = {
-
-};
 
 
 // Functions *********************************************
 function init() {
     createLanguageCheckboxes();
+    initModal();
 
     // Hide Elements
     $("#homeButton").hide();
@@ -184,6 +175,31 @@ function getLanguageText(input) {
         }
     }
 };
+
+function initModal() {
+    // Set Global Vars
+    modal = document.getElementById('simpleModal');
+    modalBtn = document.getElementById('modalBtn');
+    closeBtn = document.getElementsByClassName('closeBtn')[0];
+    // Set Event Listeners
+    modalBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', outsideClick);
+}
+
+function openModal(){
+    modal.style.display = 'block';
+}
+
+function closeModal(){
+    modal.style.display = 'none';
+}
+
+function outsideClick(e){
+    if(e.target == modal){
+        modal.style.display = 'none';
+    }
+}
 
 function createLanguageCheckboxes() {
     var objectKeys = Object.keys(staticText);

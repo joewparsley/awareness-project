@@ -48,6 +48,36 @@
         </div>
         <a class="button" id="homeButton">Back to Tool Page</a>
         <a class="button" id="printButton">Print</a>
+
+        <!-- Modal Button -->
+        <div id="modalBtn" class="modal-btn"></div>
+        <!-- Modal -->
+        <div id="simpleModal" class="modal-overlay">
+            <div id="modal-content">
+                <span class="closeBtn">X</span>
+                <div class="modal-body">
+                    <form class="modal-input-container" id="modal-form">
+                        <h1>Update Phone Number & URL</h1>
+                        <div id="modal-input-group">
+                            <!-- Phone Number -->
+                            <label for="modal-phone">Phone Number:</label>
+                            <input type="text" name="modal-phone" id="modal-phone" placeholder="XXX-XXX-XXXX">
+                            <!-- URL -->
+                            <label for="modal-url">Vanity URL:</label>
+                            <input type="text" name="modal-url" id="modal-url" placeholder="myurl.ethicspoint.com">
+                            <!-- Lang -->
+                            <label for="lang-select">Language</label>
+                            <select id="modal-lang-select" name="lang-select"></select>
+                            <!-- Button -->
+                            <input type="button" name="modalUpdateButton" id="modalUpdateButton" class="button" value="Update Phone Number/URL">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
         <script type="text/javascript" src="https://secure.ethicspoint.com/domain/media/shared/jquery.js"></script>
 		<script type="text/javascript" src="index.js"></script>
 	</body>
