@@ -85,21 +85,17 @@ function init() {
     document.getElementById("homeButton").addEventListener("click", function(event) {
         location.reload();
     });
-    // Set up Update button
-    document.getElementById("updateButton").addEventListener("click", function(event) {
-        updateOutput();
-    });
 
     // Setup print button
     document.getElementById("printButton").addEventListener("click", function(event) {
         $("#homeButton").hide();
         $("#printButton").hide();
-        $("#form").hide();
+        $("#updateButton").hide();
         window.print();
         setTimeout(function() {
             $("#homeButton").show();
             $("#printButton").show();
-            $("#form").show();
+            $("#updateButton").show();
         },100);
     });
 };
@@ -120,29 +116,12 @@ function displayOutput() {
     $("#button").hide();
     $("#logoInputWrapper").hide();
     $("#posterHeader").hide();
+    $("#form").hide();
     // Show Elements
     $("#homeButton").show();
     $("#printButton").show();
     $("#updateButton").show();
     $("#updateHeader").show();
-    // Update form layout once a poster(s) is generated
-    updateFormLayout();
-};
-
-function updateOutput() {
-    // Clear old content
-    document.getElementById("output").innerHTML = "";
-    // Set Global Variables
-    phoneInput = document.getElementById("phone");
-    urlInput = document.getElementById("url");
-    logoInput = document.getElementById("logo");
-    languageInput = document.getElementById("lang-checkbox-group").children;
-    // Process Data
-    getLanguageText(languageInput);
-    createPages(output);
-    // Show Buttons
-    $("#homeButton").show();
-    $("#printButton").show();
 };
 
 function uploadLogo (input) {
@@ -155,11 +134,6 @@ function uploadLogo (input) {
         reader.readAsDataURL(input.files[0]);
     }
 };
-
-function updateFormLayout() {
-    var form = document.getElementById("form");
-    form.classList.add("small-form");
-}
 
 function setBackground () {
     var posterPages = document.getElementsByClassName("page-wrapper");
@@ -179,16 +153,33 @@ function getLanguageText(input) {
 function initModal() {
     // Set Global Vars
     modal = document.getElementById('simpleModal');
-    modalBtn = document.getElementById('modalBtn');
+    modalBtn = document.getElementById('updateButton');
     closeBtn = document.getElementsByClassName('closeBtn')[0];
+    updateBtn = document.getElementById("modalUpdateButton");
     // Set Event Listeners
     modalBtn.addEventListener('click', openModal);
     closeBtn.addEventListener('click', closeModal);
+    updateBtn.addEventListener('click', posterUpdate);
     window.addEventListener('click', outsideClick);
+
+    // Set Language Dropdown
+    var langKeys = Object.keys(staticText);
+    for (i=0; i < langKeys.length; i++) {
+        var langOption = document.createElement("option");
+        var dropdown = document.getElementById("modal-lang-select");
+        langOption.innerText = staticText[langKeys[i]].lang;
+        langOption.value = langKeys[i];
+        dropdown.append(langOption);
+    }
 }
 
 function openModal(){
     modal.style.display = 'block';
+    // Check to see if more than one poster has been generated so that we can disable and hide the language dropdown
+    if (document.getElementById("output").children.length > 1) {
+        var langWrapper = document.getElementById("selectWrapper");
+        langWrapper.style.display = "none";
+    }
 }
 
 function closeModal(){
@@ -201,9 +192,29 @@ function outsideClick(e){
     }
 }
 
+function posterUpdate() {
+    // Clear old content
+    document.getElementById("output").innerHTML = "";
+    // Set Global Variables
+    phoneInput = document.getElementById("modal-phone");
+    urlInput = document.getElementById("modal-url");
+    // Logic for when there is only one poster generated
+    if (document.getElementById("output").children.length <= 1) {
+        output = [];
+        var langDropdownValue = [];
+        var langDropdown = document.getElementById("modal-lang-select").value;    
+        langDropdownValue.push(langDropdown);
+        prepareOutput(langDropdownValue);
+    }
+    // Process Data
+    createPages(output);
+    // Show Buttons
+    $("#homeButton").show();
+    $("#printButton").show();
+}
+
 function createLanguageCheckboxes() {
     var objectKeys = Object.keys(staticText);
-    console.log(objectKeys[2]);
     for (i = 0; i < objectKeys.length; i++) {
         // Create elements
         var cbLabel = document.createElement("label");

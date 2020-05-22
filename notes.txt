@@ -16,7 +16,6 @@
 =Outstanding project tasks=
 1. The CSS still needs lots of tweaks. Certain languages will need special coding
 2. Need to implement a way to detect RTL languages for posters. Ask about the orange contact box and where it should be for RTL languages
-3. Need to develop a modal for the post-generated edit menu
 
 =Talking Points/Questions=
 1. Will there be a formal QA process for this? Will anyone from another team be able to QA this tool? Or will CI be in charge of QA?

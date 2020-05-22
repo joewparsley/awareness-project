@@ -42,6 +42,12 @@ html, body {
     right: 10px;
 }
 
+#updateButton {
+    position: fixed;
+    top: 60px;
+    left: 10px;
+}
+
 
 #nav {
     padding: 20px;
@@ -334,8 +340,19 @@ html, body {
     width: 75%;
 }
 
+#selectWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#modal-lang-select {
+    width: 75%;
+}
+
 .modal-body{
-    background:url(img-lg.jpg) no-repeat center;
     background-size:contain;
     height:600px;
     width: 600px;
@@ -358,8 +375,6 @@ html, body {
     text-decoration: none;
     cursor:  pointer;
 }
-
-
 
 
 /* Language Specific CSS */

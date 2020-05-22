@@ -41,16 +41,13 @@
                 </div>
                 <!-- Button -->
                 <input type="button" name="button" id="button" class="button" value="Create Poster(s)">
-                <input type="button" name="updateButton" id="updateButton" class="button" value="Update Phone Number/URL">
             </form>
             <!-- Output -->
             <div id="output"></div>
         </div>
         <a class="button" id="homeButton">Back to Tool Page</a>
         <a class="button" id="printButton">Print</a>
-
-        <!-- Modal Button -->
-        <div id="modalBtn" class="modal-btn"></div>
+        <input type="button" name="updateButton" id="updateButton" class="button" value="Update Phone Number/URL">
         <!-- Modal -->
         <div id="simpleModal" class="modal-overlay">
             <div id="modal-content">
@@ -66,18 +63,17 @@
                             <label for="modal-url">Vanity URL:</label>
                             <input type="text" name="modal-url" id="modal-url" placeholder="myurl.ethicspoint.com">
                             <!-- Lang -->
-                            <label for="lang-select">Language</label>
-                            <select id="modal-lang-select" name="lang-select"></select>
+                            <div id="selectWrapper">
+                                <label for="lang-select">Language:</label>
+                                <select id="modal-lang-select" name="lang-select"></select>
+                            </div>
                             <!-- Button -->
-                            <input type="button" name="modalUpdateButton" id="modalUpdateButton" class="button" value="Update Phone Number/URL">
+                            <input type="button" name="modalUpdateButton" id="modalUpdateButton" class="button" value="Update Poster">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
-
-
         <script type="text/javascript" src="https://secure.ethicspoint.com/domain/media/shared/jquery.js"></script>
 		<script type="text/javascript" src="index.js"></script>
 	</body>
