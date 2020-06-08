@@ -32,20 +32,27 @@ html, body {
 
 #homeButton {
     position: fixed;
-    top: 0;
+    top: 20px;
     left: 10px;
+    margin: 0 !important;
+    font-size: 12px;
 }
 
 #printButton {
     position: fixed;
-    top: 0;
+    top: 20px;
     right: 10px;
+    margin: 0 !important;
+    font-size: 12px;
 }
 
 #updateButton {
     position: fixed;
-    top: 60px;
+    top: 80px;
     left: 10px;
+    margin: 0 !important;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 
@@ -211,7 +218,22 @@ html, body {
     max-width: 70%;
 }
 
+.contact-wrapperRTL {
+    background-color: #f37f21;
+    border-radius: 60px 0px 0px 60px;
+    padding: 20px 60px 20px 100px;
+    position: absolute;
+    bottom: 300px;
+    right: 0;
+    max-width: 70%;
+}
+
 .contact-wrapper h3 {
+    font: normal normal 700 50px/70px 'Roboto', sans-serif;
+    margin-top: 0;
+}
+
+.contact-wrapperRTL h3 {
     font: normal normal 700 50px/70px 'Roboto', sans-serif;
     margin-top: 0;
 }
@@ -219,37 +241,65 @@ html, body {
 .url {
     position: relative;
     font: normal normal 700 40px/40px 'Roboto', sans-serif;
-    margin-left: 80px;
     margin-top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
-.url::before {
+.url p {
+    margin: 0px;
+}
+
+.url-icon {
     background: url(web.png) no-repeat center center;
     background-size: contain;
-    position: absolute;
-    top: -5px;
-    left: -80px;
-    height: 60px;
-    width: 60px;
-    content: " ";
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin-right: 30px;
+}
+
+.url-icon-rtl {
+    background: url(web.png) no-repeat center center;
+    background-size: contain;
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin-left: 30px;
 }
 
 .phone {
     position: relative;
     font: normal normal 700 40px/40px 'Roboto', sans-serif;
-    margin-left: 80px;
     margin-top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
-.phone::before {
+.phone p {
+    margin: 0px
+}
+
+.phone-icon {
     background: url(phone.png) no-repeat center center;
     background-size: contain;
-    position: absolute;
-    top: -5px;
-    left: -80px;
-    height: 60px;
-    width: 60px;
-    content: " ";
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin-right: 30px;
+}
+
+.phone-icon-rtl {
+    background: url(phone.png) no-repeat center center;
+    background-size: contain;
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin-left: 30px;
 }
 
 #lang-checkbox-group {
@@ -376,8 +426,21 @@ html, body {
     cursor:  pointer;
 }
 
+.rtl {
+    direction: rtl !important;
+}
+
 
 /* Language Specific CSS */
+.ar h1 {
+    font: normal normal 700 150px/180px 'Roboto', sans-serif;
+    padding: 0px 60px 0px 100px !important;
+}
+
+.ar h2 {
+    font: normal normal 400 70px/90px 'Roboto', sans-serif;
+}
+
 .be .contact-wrapper h3 {
     font: normal normal 400 35px/55px 'Roboto', sans-serif;
 }
@@ -426,6 +489,14 @@ html, body {
     font: normal normal 700 70px/90px 'Roboto', sans-serif;
 }
 
+.hi h1 {
+    font: normal normal 700 100px/120px 'Roboto', sans-serif;
+}
+
+.hi h2 {
+    font: normal normal 700 50px/70px 'Roboto', sans-serif;
+}
+
 .hr h1 {
     font: normal normal 700 70px/90px 'Roboto', sans-serif;
 }
@@ -454,12 +525,28 @@ html, body {
     font: normal normal 400 35px/55px 'Roboto', sans-serif;
 }
 
+.ja h1 {
+    font: normal normal 700 120px/140px 'Roboto', sans-serif;
+}
+
+.ja h2 {
+    font: normal normal 400 70px/90px 'Roboto', sans-serif;
+}
+
 .ka h2 {
     font: normal normal 400 40px/60px 'Roboto', sans-serif;
 }
 
 .ka .contact-wrapper h3 {
     font: normal normal 400 35px/55px 'Roboto', sans-serif;
+}
+
+.ko h1 {
+    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+}
+
+.ko h2 {
+    font: normal normal 400 55px/75px 'Roboto', sans-serif;
 }
 
 .nl h1 {
@@ -486,6 +573,14 @@ html, body {
     font: normal normal 400 35px/55px 'Roboto', sans-serif;
 }
 
+.ru h1 {
+    font: normal normal 700 80px/100px 'Roboto', sans-serif;
+}
+
+.ru h2 {
+    font: normal normal 400 50px/80px 'Roboto', sans-serif;
+}
+
 .ta h1 {
     font: normal normal 700 70px/90px 'Roboto', sans-serif;
 }
@@ -498,4 +593,35 @@ html, body {
     font: normal normal 400 30px/50px 'Roboto', sans-serif;
 }
 
+.th h1 {
+    font: normal normal 700 100px/120px 'Roboto', sans-serif;
+}
 
+.th h2 {
+    font: normal normal 400 68px/90px 'Roboto', sans-serif;
+}
+
+.ur h1 {
+    font: normal normal 700 110px/130px 'Roboto', sans-serif;
+    padding: 0px 60px 0px 100px !important;
+}
+
+.ur h2 {
+    font: normal normal 400 60px/90px 'Roboto', sans-serif;
+}
+
+.zhs h1 {
+    font: normal normal 700 150px/180px 'Roboto', sans-serif;
+}
+
+.zhs h2 {
+    font: normal normal 400 75px/95px 'Roboto', sans-serif;
+}
+
+.zh h1 {
+    font: normal normal 700 110px/140px 'Roboto', sans-serif;
+}
+
+.zh h2 {
+    font: normal normal 400 70px/90px 'Roboto', sans-serif;
+}
