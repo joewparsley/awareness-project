@@ -6,7 +6,13 @@
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta http-equiv="cache-control" content="no-cache" />
-		<meta name="robots" content="noindex, nofollow"/>
+        <meta name="robots" content="noindex, nofollow"/>
+        <meta name="copyright" content="Copyright © 2000 - 2020 NAVEX Global, Inc. All Rights Reserved.">
+		<meta name="privacy statement" content="http://www.navexglobal.com/privacy-statement">
+		<meta name="terms of use policy" content="http://www.navexglobal.com/terms-of-use">
+		<meta name="author" content="Joe Parsley | Web Developer">
+		<meta name="address" content="6000 Meadows Road, Suite 200, Lake Oswego, OR. 97035 ">
+		<meta name="codebase" content="HTML5, CSS3, & Javascript Enabled">
 		<link rel="stylesheet" type="text/css" href="index.css" />	
 	</head>
 	<body>
@@ -32,6 +38,11 @@
                             <label for="logo">Client Logo:</label>
                             <input type="file" name="logo" accept="image/*" id="logo">
                         </div>
+                        <!-- QR Code -->
+                        <div id="QRInputWrapper">
+                            <label for="qrcode">QR Code:</label>
+                            <input type="file" name="qrcode" accept="image/*" id="qrcode">
+                        </div>
                     </div>
                     <div id="box-wrapper">
                         <!-- Language Selection -->
@@ -47,7 +58,7 @@
         </div>
         <a class="button" id="homeButton">Back to Tool Page</a>
         <a class="button" id="printButton">Print</a>
-        <input type="button" name="updateButton" id="updateButton" class="button" value="Update Phone Number/URL">
+        <input type="button" name="updateButton" id="updateButton" class="button" value="Update Poster(s)">
         <!-- Modal -->
         <div id="simpleModal" class="modal-overlay">
             <div id="modal-content">

@@ -7,7 +7,7 @@
 html, body {
     padding: 0;
     margin: 0;
-    background-color: #f1f1f1;
+    background-color: #f4f4f4;
     color: #424143;
     font: normal normal 400 14px/20px 'Roboto', sans-serif;
 }
@@ -22,6 +22,9 @@ html, body {
     cursor: pointer;
     transition: all ease-in-out .1s;
     font-weight: 700;
+    -webkit-box-shadow: 0px 5px 9px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 9px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 9px -5px rgba(0,0,0,0.75);
 }
 
 .button:hover {
@@ -78,7 +81,7 @@ html, body {
 
 
 #form {
-    width: 1200px;
+    width: 1050px;
     margin: 20px  auto;
     background-color: #fff;
     border-radius: 10px;
@@ -104,6 +107,9 @@ html, body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    border-radius: 10px;
+    border: 1px solid #f37f21;
+    padding: 10px;
 }
 
 
@@ -115,18 +121,21 @@ html, body {
 }
 
 #input-group input {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     width: 100%;
 }
 
 .checkbox-text {
     font-weight: bold;
     text-decoration: underline;
-    margin: 10px 0;
+    margin: 10px 0 10px 4px;
 }
 
 #box-wrapper {
     width: 620px;
+    border-radius: 10px;
+    border: 1px solid #f37f21;
+    padding: 10px;
 }
 
 #output {
@@ -197,13 +206,11 @@ html, body {
     font: normal normal 700 90px/130px 'Roboto', sans-serif;
     padding: 0px 100px 0px 60px;
     margin: 0;
-    /* height: 290px; */
 }
 
 .page-wrapper h2 {
     font: normal normal 400 60px/80px 'Roboto', sans-serif;
     padding: 0px 60px;
-    /* height: 190px; */
     margin: 60px 0px !important;
     margin: 0;
 }
@@ -215,7 +222,6 @@ html, body {
     position: absolute;
     bottom: 300px;
     left: 0;
-    max-width: 70%;
 }
 
 .contact-wrapperRTL {
@@ -225,7 +231,6 @@ html, body {
     position: absolute;
     bottom: 300px;
     right: 0;
-    max-width: 70%;
 }
 
 .contact-wrapper h3 {
@@ -428,6 +433,11 @@ html, body {
 
 .rtl {
     direction: rtl !important;
+}
+
+.QRCode {
+    height: 125px;
+    width: 125px;
 }
 
 

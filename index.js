@@ -2,12 +2,14 @@
 var phoneInput = null;
 var urlInput = null;
 var logoInput = null;
+var QRInput = null;
 var languageInput = null;
 var selectedLanguages = [];
 var output = [];
 var modal = null;
 var modalBtn = null;
 var closeBtn = null;
+var langSelected = false;
 
 var staticText = {
     en:{title:"Report your concerns in confidence",body:"If you see or suspect wrongdoing, speak up. It’s free, secure and we're available 24/7.",contact:"How to contact us",lang:"English",rtl:false},
@@ -99,28 +101,48 @@ function init() {
     });
 };
 
+function checkLangInputs() {
+    var checkboxState = false;
+    for (i=0; i< languageInput.length; i++) {
+        if (languageInput[i].children[0].checked == true) {
+            checkboxState = true;
+        }        
+    };
+    if (checkboxState == true) {
+        langSelected = true;
+    };
+};
+
 function displayOutput() {
     // Set Global Variables
     phoneInput = document.getElementById("phone");
     urlInput = document.getElementById("url");
     logoInput = document.getElementById("logo");
+    QRInput = document.getElementById("qrcode");
     languageInput = document.getElementById("lang-checkbox-group").children;
-    // Process Data
-    getLanguageText(languageInput);
-    prepareOutput(selectedLanguages);
-    createPages(output);
-    // Hide Elements
-    $("#nav").hide();
-    $("#box-wrapper").hide();
-    $("#button").hide();
-    $("#logoInputWrapper").hide();
-    $("#posterHeader").hide();
-    $("#form").hide();
-    // Show Elements
-    $("#homeButton").show();
-    $("#printButton").show();
-    $("#updateButton").show();
-    $("#updateHeader").show();
+
+    // Check to see if a language has been selected
+    checkLangInputs();
+    if (langSelected) {
+        // Process Data
+        getLanguageText(languageInput);
+        prepareOutput(selectedLanguages);
+        createPages(output);
+        // Hide Elements
+        $("#nav").hide();
+        $("#box-wrapper").hide();
+        $("#button").hide();
+        $("#logoInputWrapper").hide();
+        $("#posterHeader").hide();
+        $("#form").hide();
+        // Show Elements
+        $("#homeButton").show();
+        $("#printButton").show();
+        $("#updateButton").show();
+        $("#updateHeader").show();
+    } else {
+        alert("Whoops! It looks like you didn't select a language for the poster. Please select one or more languages and try again.");
+    }
 };
 
 function uploadLogo(input) {
@@ -131,6 +153,17 @@ function uploadLogo(input) {
             $('.logo').css('background-size', "contain");
         };
         reader.readAsDataURL(input.files[0]);
+    }
+};
+
+function uploadQRCode(input) {
+    if (input.files && input.files[0]) {
+        var QRreader = new FileReader();
+        QRreader.onload = function (e) {
+            $('.QRCode').css('background', "url(" + e.target.result + ") no-repeat center center");
+            $('.QRCode').css('background-size', "contain");
+        };
+        QRreader.readAsDataURL(input.files[0]);
     }
 };
 
@@ -241,6 +274,7 @@ function prepareOutput(langs) {
             body:"",
             contact:"",
             logo:"",
+            qrcode:"",
             url:"",
             phone:"",
             lang:"",
@@ -251,6 +285,7 @@ function prepareOutput(langs) {
         dataOutput.body = staticText[langs[i]].body;
         dataOutput.contact = staticText[langs[i]].contact;
         dataOutput.logo = logoInput;
+        dataOutput.qrcode = QRInput;
         dataOutput.url = urlInput.value;
         url = urlInput.value;
         dataOutput.phone = phoneInput.value;
@@ -281,11 +316,13 @@ function createPages(page) {
         var contactWrapper = document.createElement("div");
         var ngLogoElement = document.createElement("div");
         var customerLogoElement = document.createElement("div");
+        var qrCodeElement = document.createElement("div");
         var logoElementWrapper = document.createElement("div");
         var footerCopyText = document.createElement("p");
         // Add Classes
         ngLogoElement.classList.add("ngLogo")
         customerLogoElement.classList.add("logo");
+        qrCodeElement.classList.add("QRCode");
         footerCopyText.classList.add("footer-copy");
         logoElementWrapper.classList.add("footer-wrapper");
         urlElementWrapper.classList.add("url");
@@ -308,6 +345,7 @@ function createPages(page) {
         // Prepare footer
         footerCopyText.innerText = "©2020 NAVEX Global®.  All Rights Reserved  NVX29171  01/19";
         logoElementWrapper.append(customerLogoElement);
+        logoElementWrapper.append(qrCodeElement);
         logoElementWrapper.append(ngLogoElement);
         logoElementWrapper.append(footerCopyText);
         // Place text in elements
@@ -335,6 +373,7 @@ function createPages(page) {
     }
     //  Upload Images
     uploadLogo(logoInput);
+    uploadQRCode(QRInput);
 };
 
 // DOM Ready *********************************************
