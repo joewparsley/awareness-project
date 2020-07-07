@@ -314,7 +314,7 @@ html, body {
 }
 
 .cbwrapper {
-    width: 140px;
+    width: 145px;
     margin: 5px 0;
 }
 
@@ -521,6 +521,7 @@ html, body {
 
 .hy h2 {
     font: normal normal 400 50px/70px 'Roboto', sans-serif;
+    margin-top: 80px!important;
 }
 
 .id h2 {
@@ -545,6 +546,7 @@ html, body {
 
 .ka h2 {
     font: normal normal 400 40px/60px 'Roboto', sans-serif;
+    margin-top: 100px!important;
 }
 
 .ka .contact-wrapper h3 {
@@ -552,7 +554,7 @@ html, body {
 }
 
 .ko h1 {
-    font: normal normal 700 70px/90px 'Roboto', sans-serif;
+    font: normal normal 700 68px/88px 'Roboto', sans-serif;
 }
 
 .ko h2 {
@@ -560,6 +562,10 @@ html, body {
 }
 
 .nl h1 {
+    font: normal normal 700 60px/80px 'Roboto', sans-serif;
+}
+
+.ml h1 {
     font: normal normal 700 60px/80px 'Roboto', sans-serif;
 }
 
@@ -629,7 +635,7 @@ html, body {
 }
 
 .zh h1 {
-    font: normal normal 700 110px/140px 'Roboto', sans-serif;
+    font: normal normal 700 100px/140px 'Roboto', sans-serif;
 }
 
 .zh h2 {
